@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ejemplo 1</title>
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- css -->
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <class id="texto1">Cambiar de color , evento Onclick :</class>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <input type="button" class="btn btn-success" id="eventoOnclick" value ="Ejecutar"/>                        
+                </div>
+                <div class="col-md-4">
+                    <input type="button" class="btn btn-default" id="eventoOnclickReset" value ="Reset"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="button" class="btn btn-default" id="eventoOnclickJavascript"
+                    onclick="eventoOnclick()" value ="Reset"/>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+<script src="js/script.js"></script>
+<script>
+    function eventoOnclick (){
+        alert("Fui ejecutado con Javascript");
+    }
+    var count = 0;
+    $("#eventoOnclick").on('click',function(){
+        if(count % 2 == 0){
+            $("#texto1").css("background-color","red");
+            $("#texto1").css("color","white");
+        }else{
+            $("#texto1").css("background-color","blue");
+            $("#texto1").css("color","yellow");         
+        }
+        count++;
+    });
+    $("#eventoOnclickReset").on('click',function(){
+        $("#texto1").css("background-color","white");
+        $("#texto1").css("color","black");
+    });
+
+</script>
+</html>
